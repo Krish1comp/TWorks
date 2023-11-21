@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mediaiwki 
+spec:
+  replicas: 1  #replicaNo#
+  selector:
+    matchLabels:
+      app: mediawiki
+  template:
+    metadata:
+      labels:
+        app: mediawiki 
+    spec:
+      containers:
+        - name: mediawiki 
+          image: myacrkrishsmk.azurecr.io/mediwiki
+          ports:
+          - containerPort: 80
